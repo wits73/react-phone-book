@@ -24,20 +24,36 @@ class PhoneForm extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <input
-          placeholder="이름"
-          value={this.state.name}
-          onChange={this.handleChange}
-          name="name"
-        />
-        <input
-          placeholder="전화번호"
-          value={this.state.phone}
-          onChange={this.handleChange}
-          name="phone"
-        />
-        <div>{this.state.name} {this.state.phone}</div>
-        <button type="submit">등록</button>
+        <div className="ui form">
+          <div className="three fields">
+            <div className="field">
+              <label>Name</label>
+              <input 
+                type="text" 
+                placeholder="Name"
+                value={this.state.name}
+                onChange={this.handleChange}
+                name="name"
+              />
+            </div>
+            <div className="field">
+              <label>Phone Number</label>
+              <input 
+                type="text" 
+                placeholder="Phone Number"
+                value={this.state.phone}
+                onChange={this.handleChange}
+                name="phone"
+              />
+            </div>
+            <div className="field">
+              <label>Submit</label>
+              <button className="ui secondary button">
+                Okay
+              </button>
+            </div>
+          </div>
+        </div>
       </form>
     );
   }

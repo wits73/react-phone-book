@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PhoneForm from './components/PhoneForm';
 import PhoneInfoList from './components/PhoneInfoList';
+import Header from './components/Header/Header';
 
 class App extends Component {
   id = 2
@@ -8,12 +9,12 @@ class App extends Component {
     information: [
       {
         id: 0,
-        name: '김민준',
+        name: 'Jane Doe',
         phone: '010-0000-0000'
       },
       {
         id: 1,
-        name: '홍길동',
+        name: 'John Doe',
         phone: '010-0000-0001'
       }
     ],
@@ -58,17 +59,18 @@ class App extends Component {
     );
     return (
       <div>
+        <Header/>
         <PhoneForm
           onCreate={this.handleCreate}
         />
-
-        <p>
+        <div className="ui input focus">
           <input 
-            placeholder="검색 할 이름을 입력하세요.." 
+            type="text" 
+            placeholder="Search..."
             onChange={this.handleChange}
             value={keyword}
           />
-        </p>
+        </div>
         <hr />
 
         <PhoneInfoList 

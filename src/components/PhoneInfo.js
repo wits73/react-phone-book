@@ -91,24 +91,26 @@ class PhoneInfo extends Component {
       // 수정모드
       return (
         <div style={style}>
-          <div>
+          <div className="ui input focus">
             <input
               value={this.state.name}
               name="name"
-              placeholder="이름"
               onChange={this.handleChange}
             />
           </div>
-          <div>
+          <div className="ui input focus">
             <input
               value={this.state.phone}
               name="phone"
-              placeholder="전화번호"
               onChange={this.handleChange}
             />
           </div>
-          <button onClick={this.handleToggleEdit}>적용</button>
-          <button onClick={this.handleRemove}>삭제</button>
+          <button className="mini ui primary button"  onClick={this.handleToggleEdit}>
+            Apply
+          </button>
+          <button className="mini ui orange button"  onClick={this.handleRemove}>
+            Delete
+          </button>
         </div>
       );
     }
@@ -121,8 +123,12 @@ class PhoneInfo extends Component {
           <b>{name}</b>
         </div>
         <div>{phone}</div>
-        <button onClick={this.handleToggleEdit}>수정</button>
-        <button onClick={this.handleRemove}>삭제</button>
+        <button className="mini ui primary button"  onClick={this.handleToggleEdit}>
+            Edit
+        </button>
+        <button className="mini ui orange button"  onClick={this.handleRemove}>
+            Delete
+        </button>
       </div>
     );
   }
